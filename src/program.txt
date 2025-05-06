@@ -1,0 +1,2 @@
+int test = 0;
+char test2 = 0;
