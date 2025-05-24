@@ -36,24 +36,25 @@ int main(int argc, char *argv[]) {
     {
         while(fgets(buffer, 255, pF) != NULL)
         {
-            printf("%s\n", buffer);
-            if (strcmp(buffer, "\n") == 0) {
-                continue;
-            } else {
-                strcpy(content, buffer);
+            printf("test; %s\n", buffer);
+            char delimiter[] = " ";
+            char *token;
+
+            token = strtok(content, delimiter);
+
+            while (token != NULL) {
+                printf("Token: %s\n", token);
+                token = strtok(NULL, delimiter);
             }
+            /*if (strcmp(buffer, "\n") == 0) {
+                continue;
+            } else {*/
+                strcpy(content, buffer);
+            //}
         }
     }
 
-    char delimiter[] = " ";
-    char *token;
 
-    token = strtok(content, delimiter);
-
-    while (token != NULL) {
-        printf("Token: %s\n", token);
-        token = strtok(NULL, delimiter);
-    }
 
 
 
