@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 typedef lolled() {
     int* out = malloc(32 * sizeof(int));
     out[31] = 0;
@@ -7,3 +8,7 @@ typedef lolled() {
         
     }
 }:{}
+=======
+int test = 0;
+char test2 = 0;
+>>>>>>> e7797178df089ef456625ec08db5de9d094d8dfc
