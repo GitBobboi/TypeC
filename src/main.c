@@ -9,6 +9,29 @@ void* MEA(size_t size) {
     return (void*)string;
 }
 
+char ** SBS(char* in) {
+    char* out = malloc(strlen(in) + 1);
+    memcpy(out, in, strlen(in));
+    out[strlen(in) + 1] = '\0';
+    char** trueout = malloc(4096);
+    int v = 0;
+    int l = 0;
+    for (int i = 0; i < strlen(in); i++){
+        if (out[i] == ' ') {
+            out[i] = '\0';
+            size_t word_size = strlen(out); 
+            char* buffer = malloc(word_size + 1);
+            buffer[word_size] = '\0';
+            memcpy(buffer, &out[l + ((l != 0) ? 1:0)], word_size);
+            trueout[v] = buffer;
+            out[i] = ' ';
+            v++;
+            l = i;
+        }
+    }
+    return trueout;
+}
+
 void link_arrays(void* array1, void* array2, size_t size) {
     char temp = ((char*)array1)[size-8];
     memcpy(&temp, &array2, 8);

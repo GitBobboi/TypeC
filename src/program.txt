@@ -1,0 +1,9 @@
+typedef lolled() {
+    int* out = malloc(32 * sizeof(int));
+    out[31] = 0;
+    return (void*)out;
+}:{
+    char*() {
+        
+    }
+}:{}
